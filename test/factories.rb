@@ -1,4 +1,8 @@
 FactoryGirl.define do
+  factory :tag do
+    name "MyString"
+    bookmark nil
+  end
   factory :other_bookmark, class: Bookmark do
     title 'One Weird Trick'
     url 'http://www.spamsite.com/wierdtricks'

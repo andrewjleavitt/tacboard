@@ -159,6 +159,3 @@ DEPENDENCIES
   rails (~> 5.0.0)
   spring
   spring-watcher-listen (~> 2.0.0)
-
-BUNDLED WITH
-   1.11.2

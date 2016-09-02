@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160710164425) do
+ActiveRecord::Schema.define(version: 20160831153925) do
 
   create_table "bookmarks", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
@@ -20,4 +20,13 @@ ActiveRecord::Schema.define(version: 20160710164425) do
     t.datetime "updated_at",                null: false
   end
 
+  create_table "tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.integer  "bookmark_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["bookmark_id"], name: "index_tags_on_bookmark_id", using: :btree
+  end
+
+  add_foreign_key "tags", "bookmarks"
 end
